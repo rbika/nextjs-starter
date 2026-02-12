@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "format": "prettier --write ."
+    "lint": "tsc --noEmit && eslint --fix",
+    "format": "prettier --write .",
+    "prepare": "sh .simple-git-hooks/simple-git-hooks.sh"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",
@@ -30,8 +31,10 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
