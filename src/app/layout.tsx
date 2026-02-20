@@ -6,6 +6,7 @@ import './globals.css'
 import { Header } from '@/components/header'
 import { QueryClientProvider } from '@/components/query-client-provider'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,6 +42,7 @@ const RootLayout = ({
           <QueryClientProvider>
             <Header />
             <main className="my-12 pt-px font-sans">{children}</main>
+            <Toaster />
           </QueryClientProvider>
         </ThemeProvider>
       </body>
