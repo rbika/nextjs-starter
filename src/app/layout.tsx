@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
 import { Header } from '@/components/header'
+import { QueryClientProvider } from '@/components/query-client-provider'
 import { ThemeProvider } from '@/components/theme-provider'
 
 const geistSans = Geist({
@@ -37,8 +38,10 @@ const RootLayout = ({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className="my-12 pt-px font-sans">{children}</main>
+          <QueryClientProvider>
+            <Header />
+            <main className="my-12 pt-px font-sans">{children}</main>
+          </QueryClientProvider>
         </ThemeProvider>
       </body>
     </html>

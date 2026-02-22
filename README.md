@@ -9,6 +9,7 @@ An opinionated starter template for building full-stack Next.js apps.
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[Tailwind 4](https://tailwindcss.com/)**
 - **[Shadcn + Base UI](https://base-ui.com/)**
+- **[TanStack Query](https://tanstack.com/query)**
 - **[Lucide React](https://lucide.dev/)**
 - **[ESLint + Prettier](https://prettier.io/)**
 
