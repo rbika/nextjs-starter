@@ -64,7 +64,7 @@ const SignUpForm = () => {
       return data
     },
     onSuccess: () => {
-      router.push(paths.home())
+      router.push(paths.app())
       router.refresh()
     },
     onError: (error) => {

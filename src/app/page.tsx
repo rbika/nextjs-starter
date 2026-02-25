@@ -1,8 +1,20 @@
+import { headers } from 'next/headers'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 
 import { Container } from '@/components/container'
+import { auth } from '@/lib/auth'
+import { paths } from '@/utils/paths'
 
-const HomePage = () => {
+const HomePage = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  })
+
+  if (session) {
+    redirect(paths.app())
+  }
+
   return (
     <Container className="mt-5">
       <p className="text-muted-foreground mt-3 text-base leading-relaxed">
