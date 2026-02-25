@@ -18,6 +18,13 @@ const Header = () => {
           <Button render={<Link href={paths.signUp()} />} nativeButton={false}>
             Sign up
           </Button>
+          <Button
+            variant="outline"
+            render={<Link href={paths.signIn()} />}
+            nativeButton={false}
+          >
+            Sign in
+          </Button>
         </div>
       </Container>
     </nav>

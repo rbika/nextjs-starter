@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { paths } from '@/utils/paths'
 
 const SignUpPage = () => {
   return (
@@ -27,7 +28,10 @@ const SignUpPage = () => {
         <CardFooter>
           <div className="text-muted-foreground w-full text-center">
             Already have an account?{' '}
-            <Link href="" className="text-foreground hover:underline">
+            <Link
+              href={paths.signIn()}
+              className="text-foreground hover:underline"
+            >
               Sign in
             </Link>
             .
