@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 import { useForm } from '@tanstack/react-form'
@@ -106,7 +107,15 @@ const SignInForm = () => {
               field.state.meta.isTouched && !field.state.meta.isValid
             return (
               <Field data-invalid={isInvalid}>
-                <FieldLabel htmlFor={field.name}>Password</FieldLabel>
+                <div className="flex justify-between gap-2">
+                  <FieldLabel htmlFor={field.name}>Password</FieldLabel>
+                  <Link
+                    href={paths.forgotPassword()}
+                    className="text-muted-foreground hover:text-foreground hover:underline"
+                  >
+                    Forgot password?
+                  </Link>
+                </div>
                 <Input
                   id={field.name}
                   name={field.name}

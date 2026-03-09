@@ -1,3 +1,4 @@
+import { waitUntil } from '@vercel/functions'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 
@@ -16,5 +17,13 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
+    sendResetPassword: async ({ url }) => {
+      waitUntil(
+        // TODO: Send email with reset password link
+        (async () => {
+          console.log('>>> reset password url:', url)
+        })(),
+      )
+    },
   },
 })
