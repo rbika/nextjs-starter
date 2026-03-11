@@ -14,6 +14,7 @@ An opinionated starter template for building full-stack Next.js apps.
 - **[TanStack Form](https://tanstack.com/form)**
 - **[Drizzle ORM](https://orm.drizzle.team/) + [Neon](https://neon.tech/)**
 - **[Better Auth](https://www.better-auth.com/)**
+- **[Resend](https://resend.com/)**
 - **[Lucide React](https://lucide.dev/)**
 - **[ESLint + Prettier](https://prettier.io/)**
 
@@ -23,6 +24,7 @@ An opinionated starter template for building full-stack Next.js apps.
 - **Dark mode** - system-aware theme switching
 - **Linting and formatting on save** - including import sorting and Tailwind class sorting
 - **Pre-commit hooks** - run formatting and linting checks on staged files
+- **Email flow** - forgot password
 
 ## Setup
 
@@ -35,6 +37,7 @@ Create a `.env` file with the following values:
 | `DATABASE_URL`       | Create a Neon project and copy the connection string             |
 | `BETTER_AUTH_SECRET` | Secret for auth (generate one running `openssl rand -base64 32`) |
 | `BETTER_AUTH_URL`    | App URL (`http://localhost:3000`)                                |
+| `RESEND_API_KEY`     | Create a Resend key and copy the string                          |
 
 .env example:
 
@@ -42,6 +45,7 @@ Create a `.env` file with the following values:
 DATABASE_URL=neon_connection_string
 BETTER_AUTH_SECRET=auth_secret
 BETTER_AUTH_URL=http://localhost:3000
+RESEND_API_KEY=api_key
 ```
 
 ### 2. Database

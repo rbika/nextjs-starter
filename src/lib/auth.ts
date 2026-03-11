@@ -4,6 +4,7 @@ import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 
 import { db } from '@/db/drizzle'
 import * as schema from '@/db/schema'
+import { sendResetPasswordEmail } from '@/emails/send-reset-password-email'
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -17,13 +18,8 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
-    sendResetPassword: async ({ url }) => {
-      waitUntil(
-        // TODO: Send email with reset password link
-        (async () => {
-          console.log('>>> reset password url:', url)
-        })(),
-      )
+    sendResetPassword: async ({ user, url }) => {
+      waitUntil(sendResetPasswordEmail(user.name, user.email, url))
     },
   },
 })
