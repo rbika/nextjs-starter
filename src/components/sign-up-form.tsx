@@ -59,12 +59,15 @@ const SignUpForm = () => {
       email: string
       password: string
     }) => {
-      const { data, error } = await authClient.signUp.email(payload)
+      const { data, error } = await authClient.signUp.email({
+        ...payload,
+        callbackURL: paths.app(),
+      })
       if (error) throw error
       return data
     },
     onSuccess: () => {
-      router.push(paths.app())
+      router.push(paths.emailVerification())
       router.refresh()
     },
     onError: (error) => {

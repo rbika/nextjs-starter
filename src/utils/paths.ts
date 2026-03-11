@@ -5,6 +5,7 @@ export const paths = {
   signIn: () => '/sign-in',
   forgotPassword: () => '/forgot-password',
   resetPassword: () => '/reset-password',
+  emailVerification: () => '/email-verification',
 
   // Protected routes
   app: () => '/app',

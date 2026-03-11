@@ -24,7 +24,7 @@ An opinionated starter template for building full-stack Next.js apps.
 - **Dark mode** - system-aware theme switching
 - **Linting and formatting on save** - including import sorting and Tailwind class sorting
 - **Pre-commit hooks** - run formatting and linting checks on staged files
-- **Email flow** - forgot password
+- **Email flows** - forgot password and email verification
 
 ## Setup
 
