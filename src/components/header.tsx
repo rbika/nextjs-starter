@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { auth } from '@/lib/auth'
 import { paths } from '@/utils/paths'
 import { AccountDropdown } from './account-dropdown'
+import { ThemeSwitcher } from './theme-switcher'
 
 const Header = async () => {
   const session = await auth.api.getSession({
@@ -24,6 +25,7 @@ const Header = async () => {
 
         {!session ? (
           <div className="flex items-center gap-2">
+            <ThemeSwitcher variant="button" />
             <Button
               render={<Link href={paths.signUp()} />}
               nativeButton={false}

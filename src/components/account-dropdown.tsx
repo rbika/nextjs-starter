@@ -7,6 +7,7 @@ import { useMutation } from '@tanstack/react-query'
 import { UserRoundIcon } from 'lucide-react'
 import { toast } from 'sonner'
 
+import { ThemeSwitcher } from '@/components/theme-switcher'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -67,6 +68,7 @@ const AccountDropdown = () => {
           <DropdownMenuItem
             render={<Link href={paths.profile()}>Profile</Link>}
           />
+          <ThemeSwitcher variant="dropdown-item" />
           <DropdownMenuItem
             disabled={signOutMutation.isPending}
             onClick={handleSignOut}
