@@ -7,7 +7,7 @@ import { Container } from '@/components/container'
 import { Button } from '@/components/ui/button'
 import { auth } from '@/lib/auth'
 import { paths } from '@/utils/paths'
-import { SignOutButton } from './sign-out-button'
+import { AccountDropdown } from './account-dropdown'
 
 const Header = async () => {
   const session = await auth.api.getSession({
@@ -39,7 +39,7 @@ const Header = async () => {
             </Button>
           </div>
         ) : (
-          <SignOutButton />
+          <AccountDropdown />
         )}
       </Container>
     </nav>
