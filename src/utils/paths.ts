@@ -9,4 +9,5 @@ export const paths = {
 
   // Protected routes
   app: () => '/app',
+  profile: () => '/app/profile',
 }
