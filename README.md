@@ -21,25 +21,33 @@ An opinionated starter template for building full-stack Next.js apps.
 ## Features
 
 - **Authentication** - email/password sign-up and sign-in
+- **Email flows** - forgot password and email verification
+- **Account management** - update display name and password from a profile page
+- **Protected routes** - authenticated route group
 - **Dark mode** - system-aware theme switching
 - **Linting and formatting on save** - including import sorting and Tailwind class sorting
 - **Pre-commit hooks** - run formatting and linting checks on staged files
-- **Email flows** - forgot password and email verification
+
+**NOTE**: For a basic starter project without authentication, check out to the `basic` branch.
 
 ## Setup
 
-### 1. Environment
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Environment
 
 Create a `.env` file with the following values:
 
-| Variable             | Description                                                      |
-| -------------------- | ---------------------------------------------------------------- |
-| `DATABASE_URL`       | Create a Neon project and copy the connection string             |
-| `BETTER_AUTH_SECRET` | Secret for auth (generate one running `openssl rand -base64 32`) |
-| `BETTER_AUTH_URL`    | App URL (`http://localhost:3000`)                                |
-| `RESEND_API_KEY`     | Create a Resend key and copy the string                          |
-
-.env example:
+| Variable             | Description                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| `DATABASE_URL`       | Create a [Neon](https://neon.tech) project and copy the connection string |
+| `BETTER_AUTH_SECRET` | Secret for auth (generate with `openssl rand -base64 32`)                 |
+| `BETTER_AUTH_URL`    | App URL (`http://localhost:3000` in development)                          |
+| `RESEND_API_KEY`     | Create a [Resend](https://resend.com) API key and copy the string         |
 
 ```
 DATABASE_URL=neon_connection_string
@@ -48,24 +56,18 @@ BETTER_AUTH_URL=http://localhost:3000
 RESEND_API_KEY=api_key
 ```
 
-### 2. Database
-
-Sync schema:
+### 3. Push database schema
 
 ```bash
 npm run db:push
 ```
 
-### 3. Run
-
-### 1. Install dependencies
-
-```bash
-npm install
-```
-
-### 2. Run the dev server
+### 4. Run the dev server
 
 ```bash
 npm run dev
 ```
+
+## Deployment
+
+The project is optimized for [Vercel](https://vercel.com). Push to a connected repo and Vercel will pick up the build automatically. Make sure to add all environment variables from the `.env` table above to your Vercel project settings.
