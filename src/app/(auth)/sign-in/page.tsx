@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/container'
 import { SignInForm } from '@/components/sign-in-form'
+import { SignInWithGoogle } from '@/components/sign-in-with-google'
 import {
   Card,
   CardContent,
@@ -12,6 +13,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { FieldSeparator } from '@/components/ui/field'
 import { paths } from '@/utils/paths'
 
 const SignInPage = () => {
@@ -26,6 +28,10 @@ const SignInPage = () => {
         </CardHeader>
         <CardContent>
           <SignInForm />
+          <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card my-4">
+            or
+          </FieldSeparator>
+          <SignInWithGoogle />
         </CardContent>
         <CardFooter>
           <div className="text-muted-foreground w-full text-center">

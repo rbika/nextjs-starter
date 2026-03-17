@@ -29,4 +29,10 @@ export const auth = betterAuth({
       waitUntil(sendVerificationEmail(user.name, user.email, url))
     },
   },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    },
+  },
 })

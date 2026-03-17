@@ -20,7 +20,7 @@ An opinionated starter template for building full-stack Next.js apps.
 
 ## Features
 
-- **Authentication** - email/password sign-up and sign-in
+- **Authentication** - email/password sign-up and sign-in, and Google OAuth
 - **Email flows** - forgot password and email verification
 - **Account management** - update display name and password from a profile page
 - **Protected routes** - authenticated route group
@@ -42,18 +42,22 @@ npm install
 
 Create a `.env` file with the following values:
 
-| Variable             | Description                                                               |
-| -------------------- | ------------------------------------------------------------------------- |
-| `DATABASE_URL`       | Create a [Neon](https://neon.tech) project and copy the connection string |
-| `BETTER_AUTH_SECRET` | Secret for auth (generate with `openssl rand -base64 32`)                 |
-| `BETTER_AUTH_URL`    | App URL (`http://localhost:3000` in development)                          |
-| `RESEND_API_KEY`     | Create a [Resend](https://resend.com) API key and copy the string         |
+| Variable               | Description                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `DATABASE_URL`         | Create a [Neon](https://neon.tech) project and copy the connection string                                    |
+| `BETTER_AUTH_SECRET`   | Secret for auth (generate with `openssl rand -base64 32`)                                                    |
+| `BETTER_AUTH_URL`      | App URL (`http://localhost:3000` in development)                                                             |
+| `RESEND_API_KEY`       | Create a [Resend](https://resend.com) API key and copy the string                                            |
+| `GOOGLE_CLIENT_ID`     | Follow [Better Auth docs](https://better-auth.com/docs/authentication/google) to get your Google credentials |
+| `GOOGLE_CLIENT_SECRET` | Follow [Better Auth docs](https://better-auth.com/docs/authentication/google) to get your Google credentials |
 
 ```
 DATABASE_URL=neon_connection_string
 BETTER_AUTH_SECRET=auth_secret
 BETTER_AUTH_URL=http://localhost:3000
 RESEND_API_KEY=api_key
+GOOGLE_CLIENT_ID=google_client_id
+GOOGLE_CLIENT_SECRET=google_client_secret
 ```
 
 ### 3. Push database schema
