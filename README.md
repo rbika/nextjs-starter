@@ -50,14 +50,26 @@ Create a `.env` file with the following values:
 | `RESEND_API_KEY`       | Create a [Resend](https://resend.com) API key and copy the string                                            |
 | `GOOGLE_CLIENT_ID`     | Follow [Better Auth docs](https://better-auth.com/docs/authentication/google) to get your Google credentials |
 | `GOOGLE_CLIENT_SECRET` | Follow [Better Auth docs](https://better-auth.com/docs/authentication/google) to get your Google credentials |
+| `SEED_PASSWORD`        | Default seed user password                                                                                   |
 
 ```
-DATABASE_URL=neon_connection_string
+# Better Auth
 BETTER_AUTH_SECRET=auth_secret
 BETTER_AUTH_URL=http://localhost:3000
-RESEND_API_KEY=api_key
+
+# Google
 GOOGLE_CLIENT_ID=google_client_id
 GOOGLE_CLIENT_SECRET=google_client_secret
+
+# Neon
+DATABASE_URL=neon_connection_string
+
+# Resend
+RESEND_API_KEY=api_key
+
+# Seed
+SEED_PASSWORD=123123123
+
 ```
 
 ### 3. Push database schema
